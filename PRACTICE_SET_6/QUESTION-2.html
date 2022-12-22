@@ -1,0 +1,36 @@
+<!-- IN QUESTION-1 USE CONFIRM TO ASK THE USER IF HE WANT TO SEE THE PROMPT AGAIN -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ReturnAgain =true;
+        
+        const CanDrive=(Age)=>{
+            return Age>=18?true:false;
+        }
+
+        while (ReturnAgain){
+            let Age = prompt("ENTER YOUR AGE: ");
+            Age = Number.parseInt(Age);
+            if(CanDrive(Age)){
+                alert("YOU ARE ELIGIBLE TO DRIVE");
+            }
+            else{
+                alert("YOU ARE NOT ELIGIBLE TO DRIVE");
+            }
+            ReturnAgain =confirm("DO YOU WANT TO CHECK YOUR ELIGIBILITY TO DRIVE AGAIN: ");
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
