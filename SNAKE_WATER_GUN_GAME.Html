@@ -1,0 +1,48 @@
+<!-- Use JavaScript to Create a game of Snake, Water & Run. The game should ask you to enter S, W or G. The game Should be able to randomly generate S, W or G and declare win or loose using alert, Confirm & Prompt wherever required -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let User =prompt("Enter the S, W or G");
+        let Computer =Math.floor((Math.random()*3));
+        let ComputerOutput =["S", "W", "G"][Computer];
+
+        const match =(ComputerOutput, User)=>{
+            if(ComputerOutput===User){
+                return ("The Match is Tied, Play Again");
+            }
+            else if(ComputerOutput==="S" && User==="W"){
+                return ("Computer won the game! Try Again");
+            }
+            else if(ComputerOutput==="S" && User==="G"){
+                return ("Congratulation! You won the game");
+            }
+            else if(ComputerOutput==="W" && User==="G"){
+                return ("Computer won the game! Try Again")
+            }
+            else if(ComputerOutput==="W" && User==="S"){
+                return ("Congratulation! You won the game");
+            }
+            else if(ComputerOutput==="G" && User==="W"){
+                return ("Congratulation! You won the game");
+            }
+            else if(ComputerOutput==="G" && User==="S"){
+                return ("Computer won the game! Try Again")
+            }
+
+        }
+        let result= match(ComputerOutput, User)
+        document.write(`COMPUTER: ${ComputerOutput} <br> YOU:${User} <br> RESULT: ${result.toUpperCase()}`);
+
+    </script>
+    
+</body>
+</html>
