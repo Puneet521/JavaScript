@@ -1,0 +1,41 @@
+<!-- Write a JavaScript Program to generate a Random Number between 1 to 100 and store it in a variable. Then takes a input from the user to tell them whether the guess was correct, greater or lesser than the original number. (100-NO. of guesses) is the score of the user. The program is expected to terminate once the number is guessed. & show his score. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESSING RANDOM NUMBER</title>
+</head>
+<body>
+    <script>
+        let RandomNumber = Math.floor((Math.random()*100)+1);
+        RandomNumber=Number.parseInt(RandomNumber);
+        let GuessNumber;
+        let count =0;
+        
+        while(GuessNumber != RandomNumber){
+            GuessNumber=prompt("GUESS THE NUMBER B/W 1 TO 100");
+            if(RandomNumber==GuessNumber){
+                alert("CONGRATULATION! YOU HAVE GUESSED THE RIGHT NUMBER");
+                count++;
+                alert(`YOUR SCORE IS: ${100-count}`);
+            }
+            else if(RandomNumber>=GuessNumber){
+                alert('THE EXACT NUMBER IS GREATER THAN IT');
+                count++;
+            }
+            else if(RandomNumber<=GuessNumber){
+                alert("THE EXACT NUMBER IS SMALLER THAN IT");
+                count++;
+            }
+            else{
+                alert('YOU MIGHT HAVE ENTER WRONG VALUES, PLEASE ENTER THE NUMBER BETWEEN 1 TO 100');
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
